@@ -52,17 +52,29 @@ const christmas = 6
 const futureId = 9
 
 // Do not change code above this comment
-if(futureId===true){
-console.log('ID not created yet')}
-
-let copied = { ...holidays[christmas], name: 'X-mas Day' };
-const correctDate = new Date(copied.date);
-correctDate.setHours(0);
-correctDate.setMinutes(0);
-const isEarlier = copied.date < holidays[6].date;
 
 
-const firstHolidayTimestamp = Math.min(
+if (futureId === true) {
+    console.log('ID not created yet');
+}
+
+let copied = { ...holidays.christmas }; // Use the spread operator to create a copy
+copied.name = 'X-mas Day';
+console.log(copied);
+
+let correctDate =holidays[6].date;
+const correctedDate = new Date(holidays[6].date);
+correctedDate.setHours(0);
+correctedDate.setMinutes(0);
+const isEarlier = correctedDate < holidays[6].date; // Compare correctedDate with declared date
+console.log('New date is earlier:', isEarlier);
+
+if (isEarlier) correctDate === correctedDate
+console.log('ID change:', holidays[6].id)
+console.log('Name change:',  copied)
+console.log('Date change:', correctedDate)
+
+const firstHolidayTimestamp = Math.min (
     holidays[0].date.getTime,
     holidays[1].date.getTime,
     holidays[2].date.getTime,
@@ -74,7 +86,7 @@ const firstHolidayTimestamp = Math.min(
     holidays[8].date.getTime,
 )
 
-const lastHolidayTimestamp = Math.max(
+const lastHolidayTimestamp = Math.max (
     holidays[0].date.getTime,
     holidays[1].date.getTime,
     holidays[2].date.getTime,
@@ -86,16 +98,16 @@ const lastHolidayTimestamp = Math.max(
     holidays[8].date.getTime,
 )
 
-const firstDay = firstHolidayTimestamp.getDate
-const firstMonth = firstHolidayTimestamp.getMonth
-const lastDay = lastHolidayTimestamp.getDate
-const lastMonth = lastHolidayTimestamp.getMonth
+const firstDay = firstHolidayTimestamp.getDate;
+const firstMonth = firstHolidayTimestamp.getMonth;
+const lastDay = lastHolidayTimestamp.getDate;
+const lastMonth = lastHolidayTimestamp.getMonth;
 
 console.log(`${firstDay}/${firstMonth}/${currentYear}`);
 console.log(`${lastDay}/${lastMonth}/${currentYear}`);
 
-const randomHoliday = holidays.date[Math.random];
-console.log(randomHoliday)
+/*const randomHoliday = holidays.date[Math.random];
+console.log(randomHoliday)*/
 
 
 
